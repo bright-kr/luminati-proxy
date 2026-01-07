@@ -4,83 +4,83 @@
 [![devDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/dev-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=dev)
 [![optionalDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/optional-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=optional)
 
-一个HTTP/HTTPS 代理服务器在你身边，为你世界各地的代理流量加速/压缩/轮流/分发/管理/监控/汇报/日志/调试
+사용자 곁에서 동작하는 HTTP/HTTPS プロキシ 서버로, 전 세계 プロキ시 트래픽을 가속/압축/로ーテ이팅/분산/관리/모니터링/리포팅/로깅/디버깅합니다
 
-用 代理管理器你可以使用Bright Data 住宅 IPs 或 Bright Data 数据心 IPs.
+Proxy Manager를 사용하면 Bright Data レジデンシャルプロキシ IPs 또는 Bright Data データセンタープロキシ IPs를 사용할 수 있습니다.
 
-这个工具需要一个 [Bright Data](https://brightdata.com/?cam=github-proxy) 账户.
+이 도구를 사용하려면 [Bright Data](https://brightdata.co.kr/?cam=github-proxy) 계정이 필요합니다.
 
 ## 特征
-- 可扩展
-- 连接池（更快的反应）
-- 省心的建立组态
-- 统计数据
-- 每N请求自动轮流IP
-- 负载均衡
-- SSL 嗅探
-- SOCKSv5 代理
+- 확장 가능
+- 연결 풀(더 빠른 응답)
+- 번거롭지 않은 설정 구성
+- 통계 데이터
+- N회 リクエ스트마다 자동으로 IP 로ーテ이팅
+- 로드 밸런싱
+- SSL 스니핑
+- SOCKSv5 プロ키시
 
-### 软件更新要求
+### 소프트웨어 업데이트 요구 사항
 - 2GB RAM
 - 1 CPU
 - 3GB HDD
 
-### 需要的组态
+### 필요한 구성
 - 4GB RAM
 - 2 CPUs
 - 3GB SSD
 
-## 安装
+## 설치
 
-### 要求
-软件要求:
+### 요구 사항
+소프트웨어 요구 사항:
 
-- <a href="https://git-scm.com/downloads/">Git</a> 1.7+版
-- <a href="https://nodejs.org/en/download/">Node.js</a> 6+版
+- <a href="https://git-scm.com/downloads/">Git</a> 1.7+ 버전
+- <a href="https://nodejs.org/en/download/">Node.js</a> 6+ 버전
 
 ### Windows
-下载 <a href="https://brightdata.com/static/lpm/luminati-proxy-manager-v1.597.450-setup.exe">代理管理安装器</a>.
+<a href="https://brightdata.co.kr/static/lpm/luminati-proxy-manager-v1.597.450-setup.exe">Proxy Manager 설치 프로그램</a>을 다운로드합니다.
 
 ### Linux/MacOS
-- 安装 Node.js 20.12.1版 (最好用x
-  [nave](https://github.com/isaacs/nave))
-- 从终端安装 Bright Data 代理:
+- Node.js 20.12.1 버전을 설치합니다 (가능하면 x
+  [nave](https://github.com/isaacs/nave) 사용 권장)
+- 터미널에서 Bright Data プロ키시를 설치합니다:
 ```sh
 sudo npm install -g luminati-io/luminati-proxy
 ```
-### 升级
-- 用npm升级
+### 업그레이드
+- npm으로 업그레이드합니다
 ```sh
 sudo npm install -g luminati-io/luminati-proxy
 ```
-### 发布说明
+### 릴리스 노트
 
-你可以在 [CHANGELOG.md](https://github.com/luminati-io/luminati-proxy/blob/master/CHANGELOG.md) 里找到每个版本的修改.
+각 버전의 변경 사항은 [CHANGELOG.md](https://github.com/luminati-io/luminati-proxy/blob/master/CHANGELOG.md)에서 확인할 수 있습니다.
 
-## 运用
+## 사용
 
-### 第一次运行
-第一次运行之后:
+### 첫 실행
+첫 실행 후:
 ```sh
 pmgr
 ```
-把你的浏览器设到 [http://127.0.0.1:22999](http://127.0.0.1:22999) 为了设置凭证和代理服务器.
+자격 증명과 プロ키시 서버를 설정하려면 브라우저에서 [http://127.0.0.1:22999](http://127.0.0.1:22999)로 접속합니다.
 
-登录之后，你会看到Bright Data的默认设置所含一个”drop in”代理服务器在接口22225运行。细节提供在下面.
+로그인 후, Bright Data 기본 설정에 포함된 “drop in” プロ키시 서버가 포트 22225에서 실행되는 것을 확인할 수 있습니다. 자세한 내용은 아래에 제공됩니다.
 
-### 超级代理服务器的'Dropin'替代
+### 슈퍼 プロ키시 서버의 'Dropin' 대체
 
-Bright Data 代理服务器所含的”Dropin 模式” 和现有的超级代理服务器的功能相同。在 'dropin' 模式运行代理时，你不需要登录行政UI就能发出请求。代理账户和密码会自动被提供。'dropin' 模式是默认模式，和可以让你容易的从一般的超级代理服务器转到Bright Data 代理管理器.
+Bright Data プロ키시 서버에는 기존 슈퍼 プロ키시 서버와 동일한 기능을 하는 “Dropin 모드”가 포함되어 있습니다. 'dropin' 모드로 プロ키시를 실행할 때는 관리 UI에 로그인하지 않고도 リクエ스트를 보낼 수 있습니다. プロ키시 계정과 비밀번호는 자동으로 제공됩니다. 'dropin' 모드는 기본 모드이며, 일반적인 슈퍼 プロ키시 서버에서 Bright Data Proxy Manager로 쉽게 전환할 수 있도록 해줍니다.
 
-'dropin' 模式是默认模式。如果你想禁用'dropin',请用命令：--no-dropin:
+'dropin' 모드는 기본 모드입니다. 'dropin'을 비활성화하려면 다음 명령을 사용하십시오: --no-dropin:
 
 ```sh
 pmgr --no-dropin
 ```
 
-为了完整的API解说文件 （为了'dropin'代理请求），请从你的Bright Data账户关注 <a href="https://brightdata.com/cp/zones/proxy_examples?type=api&group=active">API例网页</a>.
+(‘dropin’ プロ키시 リクエ스트를 위한) 전체 API 설명 문서는 Bright Data 계정에서 <a href="https://brightdata.co.kr/cp/zones/proxy_examples?type=api&group=active">API 예제 페이지</a>를 참조하십시오.
 
-### 完整的API命令名单:
+### 전체 API 명령 목록:
 ```sh
 pmgr --help
 Usage:
@@ -265,7 +265,7 @@ Options:
 
 ### Docker
 
-'Docker' 图片能在这里找着 [https://hub.docker.com/r/luminati/luminati-proxy/](https://hub.docker.com/r/luminati/luminati-proxy/)
+'Docker' 이미지는 여기에서 찾을 수 있습니다: [https://hub.docker.com/r/luminati/luminati-proxy/](https://hub.docker.com/r/luminati/luminati-proxy/)
 
 ```sh
 docker pull luminati/luminati-proxy
@@ -275,29 +275,29 @@ docker run luminati/luminati-proxy
 docker run luminati/luminati-proxy pmgr --version
 ```
 
-### SSL 请求
+### SSL リクエ스트
 
--ssl 参数是为了 SSL analyzing, HTTPS请求不需要它就能运行
+-ssl 파라미터는 SSL analyzing을 위한 것이며, HTTPS リクエ스트는 이를 사용하지 않아도 실행할 수 있습니다.
 
-## 帮助
+## 도움말
 
-常见问题 [FAQ](https://help.brightdata.com/hc/en-us/sections/12571042542737-Proxy-Manager)
+자주 묻는 질문 [FAQ](https://help.brightdata.com/hc/en-us/sections/12571042542737-Proxy-Manager)
 
-如果你在Bright Data 常见问题找不着解决方式，可以在 [github 上提问](https://github.com/luminati-io/luminati-proxy/issues).
+Bright Data FAQ에서 해결 방법을 찾을 수 없다면, [github 에서 질문](https://github.com/luminati-io/luminati-proxy/issues)하실 수 있습니다.
 
-或联系 [support@brightdata.com](mailto:support@brightdata.com).
+또는 [support@brightdata.com](mailto:support@brightdata.com)로 문의하십시오.
 
 ## REST API
 
-API的解说文件能在APP里找着
+API 설명 문서는 앱에서 확인할 수 있습니다.
 
-详细解释能在 [这里](https://help.brightdata.com/hc/en-us/articles/13595498290065-API) 找到
+자세한 설명은 [여기](https://help.brightdata.com/hc/en-us/articles/13595498290065-API)에서 확인할 수 있습니다.
 
 ## Node.js API
 
-代理管理器可以当作一个需要的软件为了node.js软件 - 消除独立运行node.js的必要.
+Proxy Manager는 Node.js 애플리케이션에 필요한 라이브러리로 사용할 수 있으며, 독립적으로 Node.js를 실행해야 하는 필요성을 없애줍니다.
 
-API支持 [Promises](https://www.promisejs.org/) 和 [Generators](https://www.promisejs.org/generators/). 它内部会用 [request module](https://github.com/request/request) 莫和支持所有它的特征
+API는 [Promises](https://www.promisejs.org/) 및 [Generators](https://www.promisejs.org/generators/)를 지원합니다. 내부적으로는 [request module](https://github.com/request/request)을 사용하며, 해당 모듈의 모든 기능을 지원합니다.
 
 ### Promises
 ```js

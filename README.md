@@ -4,24 +4,24 @@
 [![devDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/dev-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=dev)
 [![optionalDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/optional-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=optional)
 
-A forward HTTP/HTTPS proxy on your side, to accelerate/compress/rotate/distribute/manage/monitor/report/log/debug traffic to your proxies around the world.
+전 세계의 プロキシ로 향하는 트래픽을 가속/압축/로ーテーティング/분산/관리/모니터링/보고/로깅/디버그하기 위해 사용자 측에 배치하는 forward HTTP/HTTPS プロキ시입니다.
 
-With Proxy manager you can drive the Bright Data residential IPs or Bright Data static IPs.
+Proxy manager를 사용하면 Bright Data レジデンシャルプロキシ IP 또는 Bright Data スタティックプロキシ IP를 구동할 수 있습니다.
 
-This tool requires a [Bright Data](https://brightdata.com/?cam=github-proxy) account.
-Please report issues or bugs to your account manager or from our [help center](https://brightdata.com/faq#proxy)
+이 도구를 사용하려면 [Bright Data](https://brightdata.co.kr/?cam=github-proxy) 계정이 필요합니다.  
+이슈 또는 버그는 계정 매니저에게 보고하시거나 [help center](https://brightdata.co.kr/faq#proxy)에서 보고해 주시기 바랍니다.
 
-<em>Read this in [中文](https://brightdata.com/static/lpm/README-zh-CN.html).</em>
+<em>[中文](https://brightdata.co.kr/static/lpm/README-zh-CN.html)으로 읽기.</em>
 
 ## Features
-- Highly scalable
-- Connection pool for faster response time
-- Easy setup for multiple configurations using a simple web interface
-- Statistics
-- Automatically rotate IP every X requests
-- Load balancing using multiple Super Proxies
-- SSL analyzing (using a self-signed certificate)
-- SOCKSv5 proxy
+- 높은 확장성
+- 더 빠른 응답 시간을 위한 커넥션 풀
+- 간단한 웹 인터페이스를 통해 여러 구성을 손쉽게 설정
+- 통계
+- X リクエスト마다 자동으로 IP 로ーテーティング
+- 여러 Super Proxies를 사용한 로드 밸런싱
+- SSL 분석(자체 서명 인증서 사용)
+- SOCKSv5 プロキ시
 
 ### Minimal requirements
 - 2GB RAM
@@ -36,100 +36,88 @@ Please report issues or bugs to your account manager or from our [help center](h
 ## Installation
 
 ### Windows
-Download the [Proxy Manager installer](https://github.com/luminati-io/luminati-proxy/releases/download/v1.597.450/luminati-proxy-manager-v1.597.450-setup.exe)
+[Proxy Manager installer](https://github.com/luminati-io/luminati-proxy/releases/download/v1.597.450/luminati-proxy-manager-v1.597.450-setup.exe)을 다운로드합니다.
 
 ### Linux/MacOS - Install script
-- Run the setup script to install
+- 설치를 위해 setup 스크립트를 실행합니다.
 ```sh
-wget -qO- https://brightdata.com/static/lpm/luminati-proxy-latest-setup.sh | bash
+wget -qO- https://brightdata.co.kr/static/lpm/luminati-proxy-latest-setup.sh | bash
 ```
-Or
+또는
 ```sh
-curl -L https://brightdata.com/static/lpm/luminati-proxy-latest-setup.sh | bash
+curl -L https://brightdata.co.kr/static/lpm/luminati-proxy-latest-setup.sh | bash
 ```
 ### Linux/MacOS - Manual install
-- Install Node.js ([nodejs.org](https://nodejs.org/en/download/))
-  Node.js version for the proxy manager should be at least 14.19.0 and not
-  older than version 20.12.1
-- Make sure npm version at least is 6.14.6
-  - if not, run: `sudo npm install -g npm@6.14.6`
-- Install Proxy Manager from the terminal prompt:
+- Node.js를 설치합니다([nodejs.org](https://nodejs.org/en/download/)).  
+  Proxy manager용 Node.js 버전은 최소 14.19.0 이상이어야 하며, 20.12.1 버전보다 오래되면 안 됩니다.
+- npm 버전이 최소 6.14.6인지 확인합니다.
+  - 아니라면 다음을 실행합니다: `sudo npm install -g npm@6.14.6`
+- 터미널 프롬프트에서 Proxy Manager를 설치합니다:
 ```sh
 sudo npm install -g @luminati-io/luminati-proxy
 ```
-- If you use npm version higher then 6 please add '--legacy-peer-deps' flag:
+- npm 버전이 6보다 높다면 '--legacy-peer-deps' 플래그를 추가해 주시기 바랍니다:
 ```sh
 sudo npm install -g @luminati-io/luminati-proxy --legacy-peer-deps
 ```
-If you are trying to install the Proxy Manager from china on Mac/Linux please run the following command first to make sure npm is installing with allowed registry:
+중국에서 Mac/Linux로 Proxy Manager 설치를 시도하는 경우, npm이 허용된 registry로 설치하도록 먼저 다음 명령을 실행해 주시기 바랍니다:
 ```sh
  npm config set registry https://r.cnpmjs.org/
 ```
-After this command ran successfully install using:
+이 명령이 성공적으로 실행된 후 다음을 사용하여 설치합니다:
 ```sh
 sudo npm install -g @luminati-io/luminati-proxy --allow-root
 ```
 ### Upgrade
-- Use npm to upgrade
+- npm을 사용하여 업그레이드합니다.
 ```sh
 sudo npm install -g @luminati-io/luminati-proxy
 ```
-Or use the cli command:
+또는 cli 명령을 사용합니다:
 ```sh
 proxy-manager --upgrade
 ```
 
-
 ### Specific Version
-- To install a specific proxy manager version, choose a version from
- [releases](https://github.com/luminati-io/luminati-proxy/releases)
+- 특정 Proxy manager 버전을 설치하려면 [releases](https://github.com/luminati-io/luminati-proxy/releases)에서 버전을 선택합니다.
 
-- Run (VERSION_NUMBER is the version you've chosen (example: 1.75.355)):
+- 실행합니다(VERSION_NUMBER는 선택한 버전입니다(예: 1.75.355)):
 ```sh
 sudo npm install -g @luminati-io/luminati-proxy@VERSION_NUMBER
 ```
 
 ### Release Notes
 
-You can review the [CHANGELOG.md](CHANGELOG.md) for list of changes in every version
+각 버전의 변경 사항 목록은 [CHANGELOG.md](CHANGELOG.md)에서 확인할 수 있습니다.
 
 ## Usage
 
 ### First run
-After running the app for the first time:
+앱을 처음 실행한 후:
 ```sh
 proxy-manager
 ```
-Point your browser to the app admin UI
-[http://127.0.0.1:22999](http://127.0.0.1:22999) to set up credentials
-and configure your proxies.
+자격 증명을 설정하고 プロキ시를 구성하려면 브라우저에서 앱 admin UI인
+[http://127.0.0.1:22999](http://127.0.0.1:22999)로 이동합니다.
 
 ### Run as daemon
-To run the proxy manager in the background:
+Proxy manager를 백그라운드에서 실행하려면:
 ```sh
 proxy-manager --daemon
 ```
 
 ### Dropin replacement for existing super-proxies
 
-Proxy Manager comes with a "dropin mode" which behaves exactly like the
-existing super-proxies. When running a proxy in dropin mode, you do not need to
-sign in via the administrative UI in order to make requests through your
-proxies. Rather, the proxy username and password are provided with each request
-to the proxy server. This mode is enabled by default, and you can use this mode
-as an easy replacement when migrating from the regular super-proxy to the Proxy
-Manager.
+Proxy Manager에는 기존 super-proxies와 정확히 동일하게 동작하는 "dropin mode"가 포함되어 있습니다. dropin mode로 プロキ시를 실행할 때는, プロキ시를 통해 リクエスト를 보내기 위해 administrative UI에서 로그인할 필요가 없습니다. 대신 각 リクエスト마다 プロキ시 서버에 전달되는 プロキ시 사용자 이름과 비밀번호가 제공됩니다. 이 모드는 기본으로 활성화되어 있으며, 일반 super-proxy에서 Proxy Manager로 마이그레이션할 때 손쉬운 대체 수단으로 사용할 수 있습니다.
 
-Dropin mode is enabled by default. To disable the dropin proxy, use the flag
-`--no-dropin`:
+Dropin mode는 기본으로 활성화되어 있습니다. dropin プロキ시를 비활성화하려면 `--no-dropin` 플래그를 사용합니다:
 
 ```sh
 proxy-manager --no-dropin
 ```
 
-For full documentation on the API for making requests through the dropin proxy,
-see <a href="https://brightdata.com/cp/zones/proxy_examples?type=api&group=active">the
-API Example page in your Bright Data account</a>.
+dropin プロキ시를 통해 リクエスト를 만드는 API에 대한 전체 문서는 <a href="https://brightdata.co.kr/cp/zones/proxy_examples?type=api&group=active">Bright Data 계정의
+API Example 페이지</a>를 참조하시기 바랍니다.
 
 ### Complete list of command line options
 
@@ -317,7 +305,7 @@ Options:
 
 ### Docker
 
-A docker image can be found on [https://hub.docker.com/r/luminati/luminati-proxy/](https://hub.docker.com/r/luminati/luminati-proxy/)
+Docker 이미지는 [https://hub.docker.com/r/luminati/luminati-proxy/](https://hub.docker.com/r/luminati/luminati-proxy/)에서 확인할 수 있습니다.
 
 ```sh
 docker pull luminati/luminati-proxy
@@ -326,31 +314,29 @@ docker run luminati/luminati-proxy proxy-manager
 
 docker run luminati/luminati-proxy proxy-manager --version
 ```
-Make sure to forward appropriate ports. Proxy manager uses by default 22999
-for the web console and the api, 22225 for dropin and 24000 for first
-configurable proxy.
+적절한 포트를 포워딩해야 합니다. Proxy manager는 기본적으로 웹 콘솔과 api에 22999를 사용하고, dropin에는 22225를 사용하며, 첫 번째 구성 가능한 プロキ시에는 24000을 사용합니다.
 
-- To run docker with cli option see the below example:
+- cli 옵션으로 docker를 실행하려면 아래 예시를 참고하시기 바랍니다:
 ```sh
 docker run luminati/luminati-proxy proxy-manager --www_whitelist_ips "172.17.0.1" --ssl true
 ```
-You can add many more options to this run.
+이 실행에 더 많은 옵션을 추가할 수 있습니다.
 
 #### Docker with predefined config file
-To use lpm's config file, docker volumes can be used:
+lpm의 config file을 사용하려면 docker volumes를 사용할 수 있습니다:
 https://docs.docker.com/storage/volumes/
 
-Following these instructions will make your docker run with a specific config file:
+다음 지침을 따르면 특정 config file로 docker를 실행할 수 있습니다:
 
-- create volume
+- 볼륨 생성
 ```sh
 docker volume create lpm-vol
 ```
-- Inspect the recently created volume
+- 최근 생성된 볼륨을 Inspect합니다.
 ```sh
 docker inspect lpm-vol
 ```
-Should output something like this:
+다음과 유사한 출력이 표시되어야 합니다:
 ```sh
   [
     {
@@ -364,13 +350,12 @@ Should output something like this:
     }
   ]
 ```
-- Take the mountpoint path /var/lib/docker/volumes/lpm-vol/_data and run
+- mountpoint 경로 /var/lib/docker/volumes/lpm-vol/_data 를 가져와 다음을 실행합니다.
 ```sh
 cd /var/lib/docker/volumes/lpm-vol/_data
 ```
-- put .luminati.json to this directory (here also will be the logs and other
-files generated by the container)
-- run docker image and attach this volume:
+- 이 디렉터리에 .luminati.json을 넣습니다(여기에는 컨테이너가 생성하는 logs 및 기타 파일도 저장됩니다).
+- docker 이미지를 실행하고 이 볼륨을 attach합니다:
 ```sh
   docker run --rm --name 'lpm1' --mount source=lpm-vol,target=/root
 "luminati/luminati-proxy" proxy-manager
@@ -378,20 +363,20 @@ files generated by the container)
 
 ### SSL Requests
 
-The --ssl parameter is for SSL analyzing, HTTPS requests can be made without it.
+--ssl パラメータ는 SSL 분석을 위한 것이며, HTTPS リクエスト는 이를 사용하지 않아도 보낼 수 있습니다.
 
 ## Help
 
-The FAQ can be found on the Bright Data
-[FAQ](https://help.brightdata.com/hc/en-us/sections/12571042542737-Proxy-Manager)
+FAQ는 Bright Data
+[FAQ](https://help.brightdata.com/hc/en-us/sections/12571042542737-Proxy-Manager)에서 확인할 수 있습니다.
 
-If you do not find the answer there, feel free to open an
-[issue on github](issues).
+그곳에서 답을 찾지 못하셨다면, 편하게
+[issue on github](issues)를 열어 주시기 바랍니다.
 
-Or contact [support@brightdata.com](mailto:support@brightdata.com).
+또는 [support@brightdata.com](mailto:support@brightdata.com)으로 문의하시기 바랍니다.
 
 ## REST API
 
-Working documentation of the API can be found inside the app.
+API의 동작 문서는 앱 내부에서 확인할 수 있습니다.
 
-The API also can be found on the Bright Data [here](https://help.brightdata.com/hc/en-us/articles/13595498290065-API)
+API는 Bright Data에서 [here](https://help.brightdata.com/hc/en-us/articles/13595498290065-API)에서도 확인할 수 있습니다.
