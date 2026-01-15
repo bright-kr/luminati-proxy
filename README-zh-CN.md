@@ -4,9 +4,9 @@
 [![devDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/dev-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=dev)
 [![optionalDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/optional-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=optional)
 
-사용자 곁에서 동작하는 HTTP/HTTPS プロキシ 서버로, 전 세계 プロキ시 트래픽을 가속/압축/로ーテ이팅/분산/관리/모니터링/리포팅/로깅/디버깅합니다
+사용자 곁에서 동작하는 HTTP/HTTPS 프록시 서버로, 전 세계 プロキ시 트래픽을 가속/압축/로ーテ이팅/분산/관리/모니터링/리포팅/로깅/디버깅합니다
 
-Proxy Manager를 사용하면 Bright Data レジデンシャルプロキシ IPs 또는 Bright Data データセンタープロキシ IPs를 사용할 수 있습니다.
+Proxy Manager를 사용하면 Bright Data レジデンシャル프록시 IPs 또는 Bright Data データセンター프록시 IPs를 사용할 수 있습니다.
 
 이 도구를 사용하려면 [Bright Data](https://brightdata.co.kr/?cam=github-proxy) 계정이 필요합니다.
 

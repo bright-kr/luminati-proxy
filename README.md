@@ -4,9 +4,9 @@
 [![devDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/dev-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=dev)
 [![optionalDependencies Status](https://david-dm.org/luminati-io/luminati-proxy/optional-status.svg)](https://david-dm.org/luminati-io/luminati-proxy?type=optional)
 
-전 세계의 プロキシ로 향하는 트래픽을 가속/압축/로ーテーティング/분산/관리/모니터링/보고/로깅/디버그하기 위해 사용자 측에 배치하는 forward HTTP/HTTPS プロキ시입니다.
+전 세계의 프록시로 향하는 트래픽을 가속/압축/로ーテーティング/분산/관리/모니터링/보고/로깅/디버그하기 위해 사용자 측에 배치하는 forward HTTP/HTTPS プロキ시입니다.
 
-Proxy manager를 사용하면 Bright Data レジデンシャルプロキシ IP 또는 Bright Data スタティックプロキシ IP를 구동할 수 있습니다.
+Proxy manager를 사용하면 Bright Data レジデンシャル프록시 IP 또는 Bright Data スタティック프록시 IP를 구동할 수 있습니다.
 
 이 도구를 사용하려면 [Bright Data](https://brightdata.co.kr/?cam=github-proxy) 계정이 필요합니다.  
 이슈 또는 버그는 계정 매니저에게 보고하시거나 [help center](https://brightdata.co.kr/faq#proxy)에서 보고해 주시기 바랍니다.
@@ -18,7 +18,7 @@ Proxy manager를 사용하면 Bright Data レジデンシャルプロキシ IP �
 - 더 빠른 응답 시간을 위한 커넥션 풀
 - 간단한 웹 인터페이스를 통해 여러 구성을 손쉽게 설정
 - 통계
-- X リクエスト마다 자동으로 IP 로ーテーティング
+- X 요청마다 자동으로 IP 로ーテーティング
 - 여러 Super Proxies를 사용한 로드 밸런싱
 - SSL 분석(자체 서명 인증서 사용)
 - SOCKSv5 プロキ시
@@ -108,7 +108,7 @@ proxy-manager --daemon
 
 ### Dropin replacement for existing super-proxies
 
-Proxy Manager에는 기존 super-proxies와 정확히 동일하게 동작하는 "dropin mode"가 포함되어 있습니다. dropin mode로 プロキ시를 실행할 때는, プロキ시를 통해 リクエスト를 보내기 위해 administrative UI에서 로그인할 필요가 없습니다. 대신 각 リクエスト마다 プロキ시 서버에 전달되는 プロキ시 사용자 이름과 비밀번호가 제공됩니다. 이 모드는 기본으로 활성화되어 있으며, 일반 super-proxy에서 Proxy Manager로 마이그레이션할 때 손쉬운 대체 수단으로 사용할 수 있습니다.
+Proxy Manager에는 기존 super-proxies와 정확히 동일하게 동작하는 "dropin mode"가 포함되어 있습니다. dropin mode로 プロキ시를 실행할 때는, プロキ시를 통해 요청를 보내기 위해 administrative UI에서 로그인할 필요가 없습니다. 대신 각 요청마다 プロキ시 서버에 전달되는 プロキ시 사용자 이름과 비밀번호가 제공됩니다. 이 모드는 기본으로 활성화되어 있으며, 일반 super-proxy에서 Proxy Manager로 마이그레이션할 때 손쉬운 대체 수단으로 사용할 수 있습니다.
 
 Dropin mode는 기본으로 활성화되어 있습니다. dropin プロキ시를 비활성화하려면 `--no-dropin` 플래그를 사용합니다:
 
@@ -116,7 +116,7 @@ Dropin mode는 기본으로 활성화되어 있습니다. dropin プロキ시를
 proxy-manager --no-dropin
 ```
 
-dropin プロキ시를 통해 リクエスト를 만드는 API에 대한 전체 문서는 <a href="https://brightdata.co.kr/cp/zones/proxy_examples?type=api&group=active">Bright Data 계정의
+dropin プロキ시를 통해 요청를 만드는 API에 대한 전체 문서는 <a href="https://brightdata.co.kr/cp/zones/proxy_examples?type=api&group=active">Bright Data 계정의
 API Example 페이지</a>를 참조하시기 바랍니다.
 
 ### Complete list of command line options
@@ -363,7 +363,7 @@ cd /var/lib/docker/volumes/lpm-vol/_data
 
 ### SSL Requests
 
---ssl パラメータ는 SSL 분석을 위한 것이며, HTTPS リクエスト는 이를 사용하지 않아도 보낼 수 있습니다.
+--ssl 매개변수는 SSL 분석을 위한 것이며, HTTPS 요청는 이를 사용하지 않아도 보낼 수 있습니다.
 
 ## Help
 
